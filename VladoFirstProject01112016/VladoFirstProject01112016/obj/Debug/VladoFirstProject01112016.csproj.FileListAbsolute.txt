@@ -1,0 +1,5 @@
+C:\Users\Student\Documents\Visual Studio 2015\Projects\vlad\VladoFirstProject01112016\VladoFirstProject01112016\bin\Debug\VladoFirstProject01112016.exe.config
+C:\Users\Student\Documents\Visual Studio 2015\Projects\vlad\VladoFirstProject01112016\VladoFirstProject01112016\bin\Debug\VladoFirstProject01112016.exe
+C:\Users\Student\Documents\Visual Studio 2015\Projects\vlad\VladoFirstProject01112016\VladoFirstProject01112016\bin\Debug\VladoFirstProject01112016.pdb
+C:\Users\Student\Documents\Visual Studio 2015\Projects\vlad\VladoFirstProject01112016\VladoFirstProject01112016\obj\Debug\VladoFirstProject01112016.exe
+C:\Users\Student\Documents\Visual Studio 2015\Projects\vlad\VladoFirstProject01112016\VladoFirstProject01112016\obj\Debug\VladoFirstProject01112016.pdb

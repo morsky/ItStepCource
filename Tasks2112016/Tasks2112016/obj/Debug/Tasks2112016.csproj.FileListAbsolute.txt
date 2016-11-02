@@ -1,0 +1,6 @@
+c:\users\student\documents\visual studio 2015\Projects\vlad\Tasks2112016\Tasks2112016\bin\Debug\Tasks2112016.exe.config
+C:\Users\Student\Documents\Visual Studio 2015\Projects\vlad\Tasks2112016\Tasks2112016\obj\Debug\Tasks2112016.csprojResolveAssemblyReference.cache
+C:\Users\Student\Documents\Visual Studio 2015\Projects\vlad\Tasks2112016\Tasks2112016\bin\Debug\Tasks2112016.exe
+C:\Users\Student\Documents\Visual Studio 2015\Projects\vlad\Tasks2112016\Tasks2112016\bin\Debug\Tasks2112016.pdb
+C:\Users\Student\Documents\Visual Studio 2015\Projects\vlad\Tasks2112016\Tasks2112016\obj\Debug\Tasks2112016.exe
+C:\Users\Student\Documents\Visual Studio 2015\Projects\vlad\Tasks2112016\Tasks2112016\obj\Debug\Tasks2112016.pdb
