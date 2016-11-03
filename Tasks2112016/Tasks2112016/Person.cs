@@ -4,7 +4,6 @@ namespace Tasks2112016
 {
     public class Person
     {
-        private string name;
         private int age;
 
         public string Name { get; set; }

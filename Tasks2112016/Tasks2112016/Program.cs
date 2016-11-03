@@ -8,8 +8,9 @@ namespace Tasks2112016
     {
         static void Main()
         {
-            Task2();
+            //Task2();
             //Task3();
+            Task4();
         }
 
         private static void Task2()
@@ -56,12 +57,29 @@ namespace Tasks2112016
                 persons.Add(person);
             }
 
-            List<Person> OrderedList = persons.Where(p => p.Age >18).OrderBy(p => p.Name.Length).ToList();
+            List<Person> OrderedList = persons.Where(p => p.Age > 18).OrderBy(p => p.Name.Length).ToList();
 
             foreach (var p in OrderedList)
             {
                 Console.WriteLine(p.Name + " " + p.Age);
             }
+        }
+
+        private static void Task4()
+        {
+            Student st1 = new Student("ivan1", 23);
+            Student st2 = new Student("ivan2", 23);
+            Student st3 = new Student("ivan3", 23);
+
+            Console.WriteLine(st1.Cource);
+            Course c = new Course("Test", 2.5f, 10);
+
+            Console.WriteLine(st1.ToString());
+
+            Console.WriteLine(c.ToString());
+
+            c.AddStudent(st1);
+            Console.WriteLine(st1.Cource);
         }
     }
 }
