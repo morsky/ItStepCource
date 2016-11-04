@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace Tasks2112016
@@ -67,19 +68,86 @@ namespace Tasks2112016
 
         private static void Task4()
         {
-            Student st1 = new Student("ivan1", 23);
-            Student st2 = new Student("ivan2", 23);
-            Student st3 = new Student("ivan3", 23);
+            Console.WriteLine("Enter number of courses:");
+            int coursesCounter = int.Parse(Console.ReadLine());
 
-            Console.WriteLine(st1.Cource);
-            Course c = new Course("Test", 2.5f, 10);
+            Console.WriteLine("Enter courses name, duration and capacity in format:\ncourseName//duration//capacity");
 
-            Console.WriteLine(st1.ToString());
+            Academy academy = new Academy();
 
-            Console.WriteLine(c.ToString());
+            for (int i = 0; i < coursesCounter; i++)
+            {
+                string input = Console.ReadLine();
+                string[] parts = input.Split(new string[] {"//"}, StringSplitOptions.None);
+                int duration = int.Parse(parts[1]);
+                int capacity = int.Parse(parts[2]);
+                Course course = new Course(parts[0], duration, capacity);
+                academy.AddCourse(course);
+            }
 
-            c.AddStudent(st1);
-            Console.WriteLine(st1.Cource);
+            Console.WriteLine("Enter number of students");
+            int studentCount = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter students and ages in format\nname//age");
+
+            for (int i = 0; i < studentCount; i++)
+            {
+                string input = Console.ReadLine();
+                string[] parts = input.Split(new string[] {"//"}, StringSplitOptions.None);
+                int age = int.Parse(parts[1]);
+                Student student = new Student(parts[0], age);
+                academy.AddStudent(student);
+            }
+
+            Console.WriteLine("Sign up student for a course.\nUse format: studentID courseID");
+            Console.WriteLine("Or enter 'quit' to exit.");
+
+            while (true)
+            {
+                string input = Console.ReadLine();
+
+                if (input == "quit")
+                {
+                    break;
+                }
+
+                string[] parts = input.Split(' ');
+                int studentId = int.Parse(parts[0]);
+                int courseId = int.Parse(parts[1]);
+
+                academy.SignUp(studentId, courseId);
+            }
+
+            Console.WriteLine(academy);
+
+            //Course c1 = new Course("Test", 2, 4);
+            //Course c2 = new Course("Opit", 2, 4);
+
+            //Student st1 = new Student("ivan1", 23);
+            //Student st2 = new Student("ivan2", 23);
+            //Student st3 = new Student("ivan3", 23);
+
+            ////Console.WriteLine(st1.StudentId);
+            ////Console.WriteLine(st2.StudentId);
+            ////Console.WriteLine(st3.StudentId);
+
+            ////Console.WriteLine(c.CourceId);
+
+            //Academy a = new Academy();
+
+            //a.AddStudent(st1);
+            //a.AddCourse(c1);
+
+            //a.AddStudent(st2);
+            //a.AddCourse(c2);
+
+            //Console.WriteLine("--------");
+            //a.SignUp(st1.StudentId, c1.CourceId);
+            //Console.WriteLine("##@#@##");
+            //a.SignUp(st2.StudentId, c1.CourceId);
+            //Console.WriteLine("##@#@##");
+            //a.SignUp(st1.StudentId, c2.CourceId);
+            //Console.WriteLine("##@#@##");
         }
     }
 }

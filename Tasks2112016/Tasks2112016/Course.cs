@@ -7,20 +7,20 @@ namespace Tasks2112016
     class Course
     {
         private static int mcourceId = 0;
-        private List<Student> allStudents = new List<Student>();
+        public List<Student> allStudents = new List<Student>();
 
         public int Capacity { get; set; }
-        private int SignedStudents { get; set; }
-        private string Name { get; set; }
-        private float Duration { get; set; }
+        public string Name { get; set; }
+        public int Duration { get; set; }
         public int CourceId { get; private set; }
 
-        public Course(string name, float duration, int capacity)
+        public Course(string name, int duration, int capacity)
         {
             this.Name = name;
             this.Duration = duration;
             this.Capacity = capacity;
             this.CourceId = mcourceId++;
+            allStudents = new List<Student>();
         }
 
         public void AddStudent(Student student)

@@ -5,20 +5,20 @@ namespace Tasks2112016
     class Student : Person
     {
         private static int mstudentId = 0;
-        private int? courceId;
+        private Course courseId;
 
-        public int? Cource
+        public Course Course
         {
-            get { return this.courceId; }
+            get { return this.courseId; }
 
             set
             {
-                if (value <= 0)
+                if (courseId != null)
                 {
                     throw new ArgumentException("Student is already signed up!");
                 }
 
-                this.courceId = value;
+                this.courseId = value;
             }
         }
 
