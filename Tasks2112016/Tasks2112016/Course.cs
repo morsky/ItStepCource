@@ -31,7 +31,6 @@ namespace Tasks2112016
             }
 
             allStudents.Add(student);
-            Console.WriteLine("Student added.");
         }
 
         public void RemoveStudent(Student student)

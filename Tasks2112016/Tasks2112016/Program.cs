@@ -119,35 +119,6 @@ namespace Tasks2112016
             }
 
             Console.WriteLine(academy);
-
-            //Course c1 = new Course("Test", 2, 4);
-            //Course c2 = new Course("Opit", 2, 4);
-
-            //Student st1 = new Student("ivan1", 23);
-            //Student st2 = new Student("ivan2", 23);
-            //Student st3 = new Student("ivan3", 23);
-
-            ////Console.WriteLine(st1.StudentId);
-            ////Console.WriteLine(st2.StudentId);
-            ////Console.WriteLine(st3.StudentId);
-
-            ////Console.WriteLine(c.CourceId);
-
-            //Academy a = new Academy();
-
-            //a.AddStudent(st1);
-            //a.AddCourse(c1);
-
-            //a.AddStudent(st2);
-            //a.AddCourse(c2);
-
-            //Console.WriteLine("--------");
-            //a.SignUp(st1.StudentId, c1.CourceId);
-            //Console.WriteLine("##@#@##");
-            //a.SignUp(st2.StudentId, c1.CourceId);
-            //Console.WriteLine("##@#@##");
-            //a.SignUp(st1.StudentId, c2.CourceId);
-            //Console.WriteLine("##@#@##");
         }
     }
 }
