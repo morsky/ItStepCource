@@ -27,7 +27,7 @@ namespace Tasks2112016
         {
             if (Capacity <= allStudents.Count)
             {
-                throw new ArgumentException("Course {0} is already full!", Name);
+                throw new ArgumentException("Course " + Name + " is already full!");
             }
 
             allStudents.Add(student);
