@@ -1,8 +1,0 @@
-C:\Users\Student\Documents\Visual Studio 2015\Projects\vlad\VladoFirstProject01112016\OverflowCheck\bin\Debug\OverflowCheck.exe.config
-C:\Users\Student\Documents\Visual Studio 2015\Projects\vlad\VladoFirstProject01112016\OverflowCheck\bin\Debug\OverflowCheck.exe
-C:\Users\Student\Documents\Visual Studio 2015\Projects\vlad\VladoFirstProject01112016\OverflowCheck\bin\Debug\OverflowCheck.pdb
-C:\Users\Student\Documents\Visual Studio 2015\Projects\vlad\VladoFirstProject01112016\OverflowCheck\obj\Debug\OverflowCheck.exe
-C:\Users\Student\Documents\Visual Studio 2015\Projects\vlad\VladoFirstProject01112016\OverflowCheck\obj\Debug\OverflowCheck.pdb
-C:\Users\Student\Documents\Visual Studio 2015\Projects\ItStepCource\VladoFirstProject01112016\OverflowCheck\bin\Debug\OverflowCheck.exe.config
-C:\Users\Student\Documents\Visual Studio 2015\Projects\ItStepCource\VladoFirstProject01112016\OverflowCheck\obj\Debug\OverflowCheck.exe
-C:\Users\Student\Documents\Visual Studio 2015\Projects\ItStepCource\VladoFirstProject01112016\OverflowCheck\obj\Debug\OverflowCheck.pdb
