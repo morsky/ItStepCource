@@ -1,0 +1,6 @@
+C:\Users\Student\Documents\Visual Studio 2015\Projects\ItStepCource\Week2\Delegates\bin\Debug\Delegates.exe.config
+C:\Users\Student\Documents\Visual Studio 2015\Projects\ItStepCource\Week2\Delegates\obj\Debug\Delegates.csprojResolveAssemblyReference.cache
+C:\Users\Student\Documents\Visual Studio 2015\Projects\ItStepCource\Week2\Delegates\bin\Debug\Delegates.exe
+C:\Users\Student\Documents\Visual Studio 2015\Projects\ItStepCource\Week2\Delegates\bin\Debug\Delegates.pdb
+C:\Users\Student\Documents\Visual Studio 2015\Projects\ItStepCource\Week2\Delegates\obj\Debug\Delegates.exe
+C:\Users\Student\Documents\Visual Studio 2015\Projects\ItStepCource\Week2\Delegates\obj\Debug\Delegates.pdb

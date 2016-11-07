@@ -1,0 +1,6 @@
+C:\Users\Student\Documents\Visual Studio 2015\Projects\ItStepCource\Week2\Week2\bin\Debug\Week2.exe.config
+C:\Users\Student\Documents\Visual Studio 2015\Projects\ItStepCource\Week2\Week2\bin\Debug\Week2.exe
+C:\Users\Student\Documents\Visual Studio 2015\Projects\ItStepCource\Week2\Week2\bin\Debug\Week2.pdb
+C:\Users\Student\Documents\Visual Studio 2015\Projects\ItStepCource\Week2\Week2\obj\Debug\Week2.csprojResolveAssemblyReference.cache
+C:\Users\Student\Documents\Visual Studio 2015\Projects\ItStepCource\Week2\Week2\obj\Debug\Week2.exe
+C:\Users\Student\Documents\Visual Studio 2015\Projects\ItStepCource\Week2\Week2\obj\Debug\Week2.pdb
