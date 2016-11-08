@@ -23,6 +23,7 @@ namespace Week2Day2
             opit.Add(10);
 
             opit.Remove(2);
+            opit.Remove(8);
 
             opit.Get(0);
             opit.Get(1);

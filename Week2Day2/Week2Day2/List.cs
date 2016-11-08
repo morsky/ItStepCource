@@ -32,22 +32,21 @@ namespace Week2Day2
 
             for (int i = 0; i < initialArray.Length; i++)
             {
-                if (initialArray[i] >= initialArray[element])
-                {
-                    //initialArray[i] = initialArray[i + 1];
-                    //continue;
-                    //int temp = initialArray[i];
-                    initialArray[i] = 0;
-                    change = true;
-                }
-
                 if (change)
                 {
                     int temp = initialArray[i];
-                    initialArray[i] = initialArray[i];
+                    int prevlement = initialArray[i - 1];
+                    initialArray[i - 1] = initialArray[i];
+                    initialArray[i] = temp;
+                } else
+                {
+                    if (initialArray[i] >= initialArray[element])
+                    {                        
+                        initialArray[i] = 0;
+                        initialArray[i] = initialArray[i];
+                        change = true;
+                    }
                 }
-
-                initialArray[i] = initialArray[i];
             }
         }
 
