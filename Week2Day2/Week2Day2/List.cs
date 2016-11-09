@@ -1,27 +1,52 @@
 ﻿using System;
+using System.Linq;
 
 namespace Week2Day2
 {
     public class List
     {
-        private int[] initialArray;
+        private int[] array;
 
         private int index;
 
         public List()
         {
-            this.initialArray = new int[4];
-            this.index = 0;
+            array = new int[4];
+            index = 0;
+        }
+
+        public int this[int inputIndex]
+        {
+            get
+            {
+                VerifyIndex(inputIndex);
+
+                return array[inputIndex];
+            }
+            set
+            {
+                VerifyIndex(inputIndex);
+
+                array[inputIndex] = value;
+            }
+        }
+
+        private void VerifyIndex(int inputIndex)
+        {
+            if (inputIndex > index)
+            {
+                throw new IndexOutOfRangeException();
+            }
         }
 
         public void Add(int element)
         {
-            if (initialArray.Length <= index)
+            if (array.Length <= index)
             {
-                initialArray = ResizeArray(initialArray);
+                array = ResizeArray(array);
             }
 
-            initialArray[index] = element;
+            array[index] = element;
 
             index++;
         }
@@ -30,30 +55,39 @@ namespace Week2Day2
         {
             bool change = false;
 
-            for (int i = 0; i < initialArray.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
                 if (change)
                 {
-                    int temp = initialArray[i];
-                    int prevlement = initialArray[i - 1];
-                    initialArray[i - 1] = initialArray[i];
-                    initialArray[i] = temp;
+                    int temp = array[i];
+                    array[i - 1] = array[i];
+                    array[i] = temp;
+                    
                 } else
                 {
-                    if (initialArray[i] >= initialArray[element])
+                    if (array[i] >= array[element])
                     {                        
-                        initialArray[i] = 0;
-                        initialArray[i] = initialArray[i];
+                        array[i] = default(int);
+                        array[i] = array[i];
                         change = true;
+                        this.index--;
                     }
                 }
             }
+
+            Print();
         }
 
-        public void Get(int element)
+        private void Print()
         {
-            int value = initialArray[element];
-            Console.WriteLine(value);
+            Console.WriteLine(string.Join(", ", this.array));
+        }
+
+        public int Get(int index)
+        {
+            Console.WriteLine(array[index]);
+
+            return array[index];
         }
 
         private int[] ResizeArray(int[] array)

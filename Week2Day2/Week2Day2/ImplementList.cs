@@ -25,22 +25,26 @@ namespace Week2Day2
             opit.Remove(2);
             opit.Remove(8);
 
-            opit.Get(0);
-            opit.Get(1);
-            opit.Get(2);
-            opit.Get(3);
-            opit.Get(4);
-            opit.Get(5);
-            opit.Get(6);
-            opit.Get(7);
-            opit.Get(8);
-            opit.Get(9);
-            opit.Get(10);
-            opit.Get(11);
-            opit.Get(12);
-            opit.Get(13);
-            opit.Get(14);
-            opit.Get(15);
+            //Console.WriteLine(opit[3]);
+
+            //List<int> 
+
+            //opit.Get(0);
+            //opit.Get(1);
+            //opit.Get(2);
+            //opit.Get(3);
+            //opit.Get(4);
+            //opit.Get(5);
+            //opit.Get(6);
+            //opit.Get(7);
+            //opit.Get(8);
+            //opit.Get(9);
+            //opit.Get(10);
+            //opit.Get(11);
+            //opit.Get(12);
+            //opit.Get(13);
+            //opit.Get(14);
+            //opit.Get(15);
 
             //GenericList<int> opit = new GenericList<int>();
             //opit.Add(1);
