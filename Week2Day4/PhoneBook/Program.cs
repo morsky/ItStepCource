@@ -15,16 +15,18 @@ namespace PhoneBook
 
             readInput(book);
 
-            using (StreamReader reader = new StreamReader("../../commands.txt"))
-            {
-                string line;
+            // sring[] personInArray = arr.Where(x => x == "Name").ToArray(); - fir find function
 
-                while ((line = reader.ReadLine()) != null)
-                {
-                    string[] input = line.Split(new char[] { '(', ')' }, StringSplitOptions.RemoveEmptyEntries);
+            //using (StreamReader reader = new StreamReader("../../commands.txt"))
+            //{
+            //    string line;
 
-                }
-            }
+            //    while ((line = reader.ReadLine()) != null)
+            //    {
+            //        string[] input = line.Split(new char[] { '(', ')' }, StringSplitOptions.RemoveEmptyEntries);
+
+            //    }
+            //}
         }
 
         private static void readInput(PhoneBook book)
