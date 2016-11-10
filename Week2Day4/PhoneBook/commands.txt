@@ -1,2 +1,4 @@
 find(Kireto)
-find(Ivanova)
+find(Ivanova, Karnobat)
+find(Ivanova, Varna)
+serialize(Mimi, ../../output.json, serializationType)
