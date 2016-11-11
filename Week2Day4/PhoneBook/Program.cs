@@ -11,14 +11,14 @@ namespace PhoneBook
         {
             PhoneBook book = new PhoneBook();
 
-            readInput(book);
+            ReadInput(book);
 
             // sring[] personInArray = arr.Where(x => x == "Name").ToArray(); - for find function
 
-            doTheCommands(book);
+            RunCommands(book);
         }
 
-        private static void doTheCommands(PhoneBook book)
+        private static void RunCommands(PhoneBook book)
         {
             using (StreamReader reader = new StreamReader("../../commands.txt"))
             {
@@ -89,7 +89,7 @@ namespace PhoneBook
             }
         }
 
-        private static void readInput(PhoneBook book)
+        private static void ReadInput(PhoneBook book)
         {
             using (StreamReader reader = new StreamReader("../../input.txt"))
             {
