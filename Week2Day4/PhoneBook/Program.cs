@@ -1,23 +1,21 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 
 namespace PhoneBook
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             PhoneBook book = new PhoneBook();
 
             ReadInput(book);
 
-            // sring[] personInArray = arr.Where(x => x == "Name").ToArray(); - for find function
-
             RunCommands(book);
         }
-
+        
         private static void RunCommands(PhoneBook book)
         {
             using (StreamReader reader = new StreamReader("../../commands.txt"))
@@ -29,20 +27,29 @@ namespace PhoneBook
                     string[] input = line.Split(new char[] { '(', ')' }, StringSplitOptions.RemoveEmptyEntries);
                     string[] parameters = input[1].Split(',');
 
+                    //input = input.Select(x => x.Trim()).ToArray();
+                    //parameters = parameters.Select(x => x.Trim()).ToArray();
+
                     if (input[0] == "find")
                     {
                         if (parameters.Length == 1)
                         {
                             string name = parameters[0];
-                            Person[] ListOfPersons = FindByName(book, name);
+                            var listOfPersons = book.Find(name);
 
-                            Print(ListOfPersons);
+                            CheckIfEmpty(listOfPersons);
+
+                            Print(listOfPersons);
                         }
                         else
                         {
-                            Person[] ListOfPersons = FindByNameAndTown(book, parameters);
+                            string name = parameters[0];
+                            string town = parameters[1].Trim();
+                            var listOfPersons = book.Find(name, town);
 
-                            Print(ListOfPersons);
+                            CheckIfEmpty(listOfPersons);
+
+                            Print(listOfPersons);
                         }
                     }
                     else if (input[0] == "serialize")
@@ -52,7 +59,7 @@ namespace PhoneBook
                         string fileName = inputPrameters[1].Trim();
                         string serializationType = inputPrameters[2].Trim();
 
-                        Person[] personToSerialize = FindByName(book, name);
+                        var personToSerialize = book.Find(name);
 
                         using (StreamWriter writer = new StreamWriter(fileName))
                         {
@@ -66,51 +73,49 @@ namespace PhoneBook
                         }
                     }
                 }
+            }
+        }
 
+        private static void CheckIfEmpty(List<Person> listOfPersons)
+        {
+            if (listOfPersons.Count == 0)
+            {
                 Console.WriteLine("Not found!");
             }
         }
 
-        private static Person[] FindByNameAndTown(PhoneBook book, string[] parameters)
+        private static void Print(List<Person> listOfPersons)
         {
-            return book.PhoneCatalogue.Where(x => x.Name.Contains(parameters[0]) && x.Town == parameters[1].Trim()).ToArray();
-        }
-
-        private static Person[] FindByName(PhoneBook book, string parameters)
-        {
-            return book.PhoneCatalogue.Where(x => x.Name.Contains(parameters[0])).ToArray();
-        }
-
-        private static void Print(Person[] ListOfPersons)
-        {
-            foreach (var item in ListOfPersons)
-            {
-                Console.WriteLine("{0}, {1} - {2}", item.Name, item.Town, item.PhoneNumber);
-            }
+            IPrinter<Person> list = new Print<Person>();
+            list.PrintLineResult(listOfPersons);
         }
 
         private static void ReadInput(PhoneBook book)
         {
-            using (StreamReader reader = new StreamReader("../../input.txt"))
-            {
-                string line;
+            //PhoneBook book1 = new PhoneBook();
+            FileReader reader = new FileReader();
+            Parser parser = new Parser();
+            book = parser.Parse(reader);
+            //using (StreamReader reader = new StreamReader("../../input.txt"))
+            //{
+            //    string line;
 
-                while ((line = reader.ReadLine()) != null)
-                {
-                    Person person = new Person();
-                    string[] input = line.Split('|');
+            //    while ((line = reader.ReadLine()) != null)
+            //    {
+            //        Person person = new Person();
+            //        string[] input = line.Split('|');
 
-                    string name = input[0].Trim();
-                    string town = input[1].Trim();
-                    string phone = input[2].Trim();
+            //        string name = input[0].Trim();
+            //        string town = input[1].Trim();
+            //        string phone = input[2].Trim();
 
-                    person.Name = name;
-                    person.Town = town;
-                    person.PhoneNumber = phone;
+            //        person.Name = name;
+            //        person.Town = town;
+            //        person.PhoneNumber = phone;
 
-                    book.Add(person);
-                }
-            }
+            //        book.Add(person);
+            //    }
+            //}
         }
     }
 }

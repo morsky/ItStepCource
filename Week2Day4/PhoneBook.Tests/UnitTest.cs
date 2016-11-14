@@ -10,7 +10,7 @@ namespace PhoneBook.Tests
         {
             PhoneBook book = new PhoneBook();
 
-            Assert.IsNotNull(book.PhoneCatalogue);
+            Assert.IsNotNull(book);
         }
 
         [TestMethod]

@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Xml;
 
 namespace PhoneBook
 {
     public class PhoneBook
     {
-        public List<Person> PhoneCatalogue = new List<Person>();
+        private List<Person> PhoneCatalogue = new List<Person>();
 
         public void Add(Person person)
         {
@@ -31,12 +29,14 @@ namespace PhoneBook
 
         //}
 
-        //public void Find(List<Person> PhoneCatalogue)
-        //{
-        //    foreach (var item in PhoneCatalogue)
-        //    {
-        //        Console.WriteLine(item.Name);
-        //    }
-        //}
+        public List<Person> Find(string name)
+        {
+            return this.PhoneCatalogue.Where(x => x.Name.Contains(name)).ToList();
+        }
+
+        public List<Person> Find(string name, string town)
+        {
+            return this.PhoneCatalogue.Where(x => x.Name.Contains(name) && x.Town == town).ToList();
+        }
     }
 }

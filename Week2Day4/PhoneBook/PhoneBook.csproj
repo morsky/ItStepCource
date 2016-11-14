@@ -47,8 +47,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileReader.cs" />
+    <Compile Include="IParser.cs" />
+    <Compile Include="IPrinter.cs" />
+    <Compile Include="IReader.cs" />
+    <Compile Include="Parser.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PhoneBook.cs" />
+    <Compile Include="Print.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
