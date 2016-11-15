@@ -4,29 +4,23 @@ namespace PhoneBook
 {
     public class Parser : IParser
     {
-        public PhoneBook Parse(IReader reader)
+        public void Parse(string line, PhoneBook book)
         {
-            PhoneBook book = new PhoneBook();
+            //PhoneBook book = new PhoneBook();
+            Person person = new Person();
+            string[] input = line.Split('|');
 
-            string line;
+            string name = input[0].Trim();
+            string town = input[1].Trim();
+            string phone = input[2].Trim();
 
-            while ((line = reader.ReadLine()) != null)
-            {
-                Person person = new Person();
-                string[] input = line.Split('|');
+            person.Name = name;
+            person.Town = town;
+            person.PhoneNumber = phone;
 
-                string name = input[0].Trim();
-                string town = input[1].Trim();
-                string phone = input[2].Trim();
+            book.Add(person);
 
-                person.Name = name;
-                person.Town = town;
-                person.PhoneNumber = phone;
-
-                book.Add(person);
-            }
-
-            return book;
+            //return book;
         }
     }
 }

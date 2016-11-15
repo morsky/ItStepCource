@@ -2,6 +2,7 @@
 {
     public interface IParser
     {
-        PhoneBook Parse(IReader reader);
+        void Parse(string line, PhoneBook book);
+        //void Parse(string line);
     }
 }

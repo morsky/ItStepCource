@@ -15,7 +15,7 @@ namespace PhoneBook
 
             RunCommands(book);
         }
-        
+
         private static void RunCommands(PhoneBook book)
         {
             using (StreamReader reader = new StreamReader("../../commands.txt"))
@@ -92,30 +92,16 @@ namespace PhoneBook
 
         private static void ReadInput(PhoneBook book)
         {
-            //PhoneBook book1 = new PhoneBook();
-            FileReader reader = new FileReader();
-            Parser parser = new Parser();
-            book = parser.Parse(reader);
-            //using (StreamReader reader = new StreamReader("../../input.txt"))
-            //{
-            //    string line;
+            using (StreamReader reader = new StreamReader("../../input.txt"))
+            {
+                Parser parser = new Parser();
+                string line;
 
-            //    while ((line = reader.ReadLine()) != null)
-            //    {
-            //        Person person = new Person();
-            //        string[] input = line.Split('|');
-
-            //        string name = input[0].Trim();
-            //        string town = input[1].Trim();
-            //        string phone = input[2].Trim();
-
-            //        person.Name = name;
-            //        person.Town = town;
-            //        person.PhoneNumber = phone;
-
-            //        book.Add(person);
-            //    }
-            //}
+                while ((line = reader.ReadLine()) != null)
+                {
+                    parser.Parse(line, book);
+                }
+            }
         }
     }
 }
