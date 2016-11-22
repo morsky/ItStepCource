@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@model BlogSystem.Data.BlogSystemDbContext
+
+<table class="table table-striped table-bordered">
+    <thead>
+    <tr>
+        <td>Name</td>
+        <td>Content</td>
+        <td>DateCreated</td>
+    </tr>
+    </thead>
+    
+    <tbody>
+        @foreach (var item in Model.Posts)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Content</td>
+                <td>@item.DateCreated</td>
+            </tr>
+        }
+    </tbody>
+</table>

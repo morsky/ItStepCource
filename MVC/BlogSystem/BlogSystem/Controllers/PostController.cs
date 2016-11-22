@@ -6,7 +6,7 @@ using BlogSystem.Model;
 
 namespace BlogSystem.Controllers
 {
-    public class HomeController : Controller
+    public class PostController : Controller
     {
         public ActionResult Index()
         {
@@ -19,7 +19,7 @@ namespace BlogSystem.Controllers
             //post.Name = "opit";
             //post.Content = "TWERTWETEW trweT tREWt RE tre TREt RET re tRe";
             //post.DateCreated = new DateTime(2002, 11, 10);
-            //post.User = user;
+            ////post.User = user;
 
             //context.Posts.Add(post);
             //context.SaveChanges();
