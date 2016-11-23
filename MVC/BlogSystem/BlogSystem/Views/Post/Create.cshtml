@@ -1,0 +1,17 @@
+﻿@model PostViewModel
+
+<H1>Create post:</H1>
+
+@using (Html.BeginForm("Create", "Post", FormMethod.Post))
+{
+    @Html.LabelFor(model => model.Name)
+    <p>@Html.TextBoxFor(model => model.Name)</p>
+
+    @Html.LabelFor(model => model.Content)
+    <p>@Html.TextAreaFor(model => model.Content)</p>
+
+    @Html.LabelFor(model => model.DateCreated)
+    <p>@Html.TextBoxFor(model => model.DateCreated)</p>
+
+    <input type="submit" />
+}

@@ -1,4 +1,5 @@
 ﻿using System;
+using BlogSystem.Models;
 
 namespace BlogSystem.Model
 {
@@ -12,6 +13,6 @@ namespace BlogSystem.Model
 
         public DateTime DateCreated { get; set; }
 
-        public virtual User User { get; set; }
+        public virtual ApplicationUser User { get; set; }
     }
 }
