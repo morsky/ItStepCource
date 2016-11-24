@@ -58,6 +58,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BlogSystemDbContent.cs" />
+    <Compile Include="Migrations\201611221049373_InitialCreate.cs" />
+    <Compile Include="Migrations\201611221049373_InitialCreate.Designer.cs">
+      <DependentUpon>201611221049373_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611241050509_Comments.cs" />
+    <Compile Include="Migrations\201611241050509_Comments.Designer.cs">
+      <DependentUpon>201611241050509_Comments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611241409525_Change.cs" />
+    <Compile Include="Migrations\201611241409525_Change.Designer.cs">
+      <DependentUpon>201611241409525_Change.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +82,17 @@
       <Project>{005a03c8-4fd1-4c24-b503-d1145f33c63a}</Project>
       <Name>BlogSystem.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201611221049373_InitialCreate.resx">
+      <DependentUpon>201611221049373_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611241050509_Comments.resx">
+      <DependentUpon>201611241050509_Comments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611241409525_Change.resx">
+      <DependentUpon>201611241409525_Change.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

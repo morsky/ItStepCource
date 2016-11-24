@@ -20,8 +20,11 @@ namespace BlogSystem.Models
         public ApplicationUser()
         {
             this.Posts = new HashSet<Post>();
+            this.Comments = new List<Comment>();
         }
 
         public virtual ICollection<Post> Posts { get; set; }
+
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }

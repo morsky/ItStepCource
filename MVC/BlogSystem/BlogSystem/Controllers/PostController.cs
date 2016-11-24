@@ -14,14 +14,21 @@ namespace BlogSystem.Controllers
         public ActionResult Index()
         {
             //BlogSystemDbContext context = new BlogSystemDbContext();
+            ICollection<CommentViewModel> comments = Context.Comments.Select(c => new CommentViewModel()
+            {
+                Text = c.Text,
+                Author = c.Author,
+            }).ToList();
 
-            ICollection<PostViewModel> posts = this.Context.Posts.Select(p => new PostViewModel()
-                {
-                    Name = p.Name,
-                    Content = p.Content,
-                    DateCreated = p.DateCreated,
-                    UserName = p.User.UserName
-                }
+            ICollection<PostViewModel> posts = Context.Posts.Select(p => new PostViewModel()
+            {
+                Name = p.Name,
+                Content = p.Content,
+                DateCreated = p.DateCreated,
+                UserName = p.User.UserName,
+                Id = p.Id,
+                //Comments = comments
+            }
                 ).ToList();
             //var user = new User();
 
@@ -46,18 +53,19 @@ namespace BlogSystem.Controllers
         [HttpPost]
         public ActionResult Create(PostViewModel postViewModel)
         {
-            var user = this.Context.Users.FirstOrDefault(u => u.Email == HttpContext.User.Identity.Name);
+            var user = Context.Users.FirstOrDefault(u => u.Email == HttpContext.User.Identity.Name);
 
-            Post post = new Post()
+            var post = new Post()
             {
+                Id = postViewModel.Id,
                 Name = postViewModel.Name,
                 Content = postViewModel.Content,
                 DateCreated = postViewModel.DateCreated,
                 User = user
             };
 
-            this.Context.Posts.Add(post);
-            this.Context.SaveChanges();
+            Context.Posts.Add(post);
+            Context.SaveChanges();
 
             return RedirectToAction("Index");
         }

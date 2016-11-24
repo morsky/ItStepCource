@@ -19,5 +19,7 @@ namespace BlogSystem.Data
         }
 
         public IDbSet<Post> Posts { get; set; }
+
+        public IDbSet<Comment> Comments { get; set; }
     }
 }

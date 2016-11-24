@@ -1,0 +1,17 @@
+﻿@model CommentViewModel
+
+<H1>Add Comment:</H1>
+
+@using (Html.BeginForm("Add", "Comment", FormMethod.Post))
+{
+    @Html.LabelFor(model => model.Text)
+    <p>@Html.TextAreaFor(model => model.Text)</p>
+
+    @Html.LabelFor(model => model.Author)
+    <p>@Html.TextBoxFor(model => model.Author)</p>
+
+    @*@Html.LabelFor(model => model.DateCreated)*@
+    <p>@*@Html.TextBoxFor(model => model.DateCreated)*@</p>
+
+    <input type="submit" />
+}
