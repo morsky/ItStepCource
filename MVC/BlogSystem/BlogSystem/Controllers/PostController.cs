@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using BlogSystem.Data;
 using System.Web.Mvc;
 using BlogSystem.Model;
 using BlogSystem.Models;
@@ -13,13 +11,6 @@ namespace BlogSystem.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            //BlogSystemDbContext context = new BlogSystemDbContext();
-            ICollection<CommentViewModel> comments = Context.Comments.Select(c => new CommentViewModel()
-            {
-                Text = c.Text,
-                Author = c.Author,
-            }).ToList();
-
             ICollection<PostViewModel> posts = Context.Posts.Select(p => new PostViewModel()
             {
                 Name = p.Name,
@@ -27,19 +18,15 @@ namespace BlogSystem.Controllers
                 DateCreated = p.DateCreated,
                 UserName = p.User.UserName,
                 Id = p.Id,
-                //Comments = comments
-            }
-                ).ToList();
-            //var user = new User();
-
-            //var post = new Post();
-            //post.Name = "opit";
-            //post.Content = "TWERTWETEW trweT tREWt RE tre TREt RET re tRe";
-            //post.DateCreated = new DateTime(2002, 11, 10);
-            ////post.User = user;
-
-            //context.Posts.Add(post);
-            //context.SaveChanges();
+                Comments = Context.Comments.Select(c => new CommentViewModel()
+                {
+                    Text = c.Text,
+                    Author = c.Author,
+                    PostId = c.PostId
+                })
+                .Where(c => c.PostId == p.Id)
+                .ToList()
+            }).ToList();
 
             return View(posts);
         }
